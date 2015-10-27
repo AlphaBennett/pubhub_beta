@@ -1,0 +1,97 @@
+<a href="" ng-click="listItemCtrl.showDialog($event, item)">
+    <md-card>
+<!--
+    <span class="business-card-img-container">                    
+        <img ng-src=" {{ item.image }} " class="md-card-image list-business-image">                    
+    </span>
+-->
+        <span class="item-name">
+            {{item.name}}
+        </span>
+        <md-card-content style="padding: 0%;">
+            <table style="width: 100%;">
+                <tr ng-repeat="special in item.times[listItemCtrl.today]">
+                    <td class="item-special" colspan="2" style="border-bottom: 1px solid lightgray;">
+                        <span>{{listItemCtrl.convertTime(special.start)}}-{{listItemCtrl.convertTime(special.end)}} <br/>
+                         {{special.special}}  </span>
+                    </td>
+                </tr>
+                <tr ng-show="!showSocialMediaDisplay">
+                    <td style="padding: 10px;">
+                        <h4 style="margin-top: 5px; width: 100%; margin: 0; color: rgb(71, 77, 74);"> {{ item.city }} <br/>{{ item.neighborhood }}</h4>
+                    </td>
+                    <td style="padding: 10px; text-align: right;">
+                        <span ng-if="item.Drink">
+                            <ng-md-icon icon="local_bar" style="fill: rgb(33, 150, 243);" size="16"></ng-md-icon>
+    <!--                        <h4 style="display: inline; vertical-align: top; color: rgb(33, 150, 243);">Drink</h4>-->
+                        </span>
+                        <span ng-if="item.Food">             
+                            <ng-md-icon icon="local_restaurant" style="fill: rgb(33, 150, 243);" size="16"></ng-md-icon>
+    <!--                        <h4 style="display: inline; vertical-align: top; color: rgb(33, 150, 243);">Food</h4>-->
+                        </span>
+                        <span ng-if="item.Entertainment">
+                            <ng-md-icon icon="local_attraction" style="fill: rgb(33, 150, 243);" size="16"></ng-md-icon>
+    <!--                        <h4 style="display: inline; vertical-align: top; color: rgb(33, 150, 243);">Entertainment</h4>-->
+                        </span>
+                    </td>
+                </tr>
+    <!--
+                <tr style="color: white;" class="pullUp" ng-if="showSocialMediaDisplay">
+                    <td style="width: 50%; background-color: #00aced;">
+                        <md-button style="width: 100%; font-weight: bold; text-align: left; height: 47.5px;">
+                            <i class="mdi mdi-twitter" style="margin: 5px;"></i>Twitter
+                        </md-button>
+                    </td>
+                    <td style="width: 50%; background-color: #dd4b39;">
+                        <md-button style="width: 100%; border-radius: 0px; font-weight: bold; text-align: left; height: 47.5px;">
+                            <i class="mdi mdi-google-plus" style="margin: 5px;"></i>Google+
+                        </md-button>
+                    </td>
+                </tr>
+                <tr style="color: white;" class="pullUp" ng-if="showSocialMediaDisplay">
+                    <td style="width: 50%; background-color: #3b5998;">
+                        <md-button style="width: 100%; border-radius: 0px; font-weight: bold; text-align: left; height: 47.5px;">
+                            <i class="mdi mdi-facebook" style="margin: 5px;"></i>Facebook
+                        </md-button>
+                    </td>
+                    <td style="width: 50%">
+                        <md-button style="width: 100%; border-radius: 0px; background-color: #cb2027; font-weight: bold; text-align: left; height: 47px;">
+                            <i class="mdi mdi-email" style="margin: 5px;"></i>Email
+                        </md-button>
+                    </td>
+                </tr>
+                <tr class="fadeOut" style="text-align: center;" ng-if="(savedDisplayIndex == $index && showSavedDisplay)">
+                    <td colspan="2" style="background-color: #259b24 !important; padding: 10px;">
+                        <span>
+                            <ng-md-icon icon="check" style="fill: white;" size="18"></ng-md-icon>
+                            <h4 style="display: inline; vertical-align: top; color: white; font-weight: bold;">Saved!</h4>
+                        </span>
+                    </td>
+                </tr>
+    -->
+            </table>
+    <!--
+            <span style="width: 100%">
+            <md-button md-no-ink 
+                       class="card-button md-button" 
+                       style="width: 225px;  border-top: 1px solid lightgray;" 
+                       aria-label="cardButton"
+                       ng-click="listCtrl.showBusinessDetailsPopup($event, item)">
+                <md-tooltip>View All Deals</md-tooltip> 
+                <span><ng-md-icon icon="expand_less" style="fill:  #1d381f; background-color: rgb(66, 222, 144);" size="28"/></span>
+            </md-button>
+            <md-button md-no-ink class="card-button" style="border-radius: 0px !important; border-top: 1px solid lightgray;" aria-label="cardButton" ng-class="{ 'business-add-button' : !showSocialMediaDisplay, 'business-shared-button-active' : showSocialMediaDisplay }" ng-click="showSocialMediaDisplay=!showSocialMediaDisplay">
+                <md-tooltip>Share</md-tooltip>
+                <ng-md-icon icon="share" style="fill: gray;" size="28" ng-show="!showSocialMediaDisplay"></ng-md-icon>
+                <ng-md-icon icon="clear" style="fill: white;" size="28" ng-show="showSocialMediaDisplay"></ng-md-icon>
+            </md-button>
+            <md-button md-no-ink class="card-button" style="border-radius: 0px !important; border-top: 1px solid lightgray;" aria-label="cardButton" ng-class="{ 'business-add-button' : !item.saved, 'business-saved-button' : item.saved }" ng-click="showSavedMessage($index, item)">
+                <md-tooltip>Add</md-tooltip>
+                <ng-md-icon icon="add" style="fill: gray;" size="28" ng-show="!item.saved"></ng-md-icon>
+                <ng-md-icon icon="check" style="fill: white;" size="28" ng-show="item.saved"></ng-md-icon>
+            </md-button>
+            </span>
+    -->
+        </md-card-content>
+    </md-card>
+</a>

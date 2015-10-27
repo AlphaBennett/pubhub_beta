@@ -1,0 +1,7 @@
+<button ng-click="filterButtonCtrl.buttonClick()" ng-if="filter.icon" class="{{key}}" ng-class="{buttonSelected: filterButtonCtrl.filterParams[key][filter.type], buttonNotSelected: !filterButtonCtrl.filterParams[key][filter.type]}">
+    <ng-md-icon ng-show="!filterButtonCtrl.filterParams[key][filter.type]" class="inactive" icon="{{filter.icon}}"></ng-md-icon>
+    <ng-md-icon ng-show="filterButtonCtrl.filterParams[key][filter.type]" class="active" icon="{{filter.icon}}"></ng-md-icon>
+</button>
+<button class="{{key}}" ng-if="!filter.icon" ng-click="filterButtonCtrl.buttonClick()" ng-class="{buttonSelected: filterButtonCtrl.filterParams[key][filter], buttonNotSelected: !filterButtonCtrl.filterParams[key][filter]}">
+    {{filter | limitTo: length}}
+</button>

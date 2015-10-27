@@ -1,0 +1,364 @@
+h1,h2,h3,h4,p,li,ul,span,body,button,div {
+    font-weight: bold;
+    margin: 0;
+}
+/* look into lightgreen color possibly? */
+html {
+    background: #ededed;
+    min-height: 100%;
+    overflow-y: scroll;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    color: rgb(0, 0, 0); 
+    text-decoration: none;
+}
+
+a:visited{color: rgb(0, 0, 0);}
+
+a.deal-link:hover {color: rgb(0, 95, 206);}
+
+/* general body and head styles */
+body {
+    background: #ffffff;
+    font-family: 'exo', sans-serif;
+    font-kerning: auto;
+    font-size: 1.3em;
+}
+
+header {
+    padding: 0 10px;
+    background: rgb(255, 255, 255);
+    border-bottom: solid 3px rgb(71, 77, 74);
+    color: rgb(33, 150, 243);
+    height: 150px;
+    font-size: 2.5em;
+    font-family: 'Orbitron'
+}
+
+.header-bar {
+    color: rgb(71, 77, 74);
+    margin-left: 5px;
+}
+
+.header-alert {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: .6em;
+    color: white;
+    
+}
+
+ul {list-style: none;}
+
+ul > li > h3 {display: inline;}
+
+/* filter component positioning */
+div.filters {
+    height: 300px;
+    text-align: center;
+}
+
+div.filter-group {
+    position: relative;
+    text-align: center;
+}
+
+div.filter-group.days {
+    top: -125px;
+}
+
+div.filter-group.times {
+    margin: 0 auto;
+    width: 500px;
+    top: -156px;
+}
+
+div.filter-group.types {
+    display: inline-block;
+    top: -126px;
+    left: -89px;
+}
+
+div.filter-group.prices {
+    display: inline-block;
+    top: -52px;
+    left: 501px;
+}
+
+div.filter-group.zlocations {
+    display: inline-block;
+    top: -126px;
+    left: -83px;
+}
+
+.filter-group-item {
+    display: inline-block;
+    margin: 1px;
+    vertical-align: top;
+}
+/* slider styling*/ 
+div[ui-slider]{
+    background: rgb(71, 77, 74);
+    border: 0;
+}
+
+
+span.ui-slider-handle {
+    background: rgb(33, 150, 243);
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    top: -17px !important;
+    text-align: center;
+    vertical-align: middle;
+    display:table-cell;
+    font-size: .70em;
+    padding-top: 16px;
+    padding-right: 1px;
+}
+
+div.ui-slider-range {
+    background: rgb(33, 150, 243);
+}
+
+/* filter button styling */
+button {
+    width: auto;
+    height: 50px;
+    margin: 1px 2px;
+    border: none;
+    border-radius: 5px;
+}
+
+button.days {
+    width: 50px;
+    border-radius: 50%;
+}
+
+button.types {width: 50px;}
+
+button.prices {width: 60px;}
+
+button.buttonSelected {
+    background-color: rgb(33, 150, 243);
+    color: #192733;
+}
+
+button.buttonNotSelected {
+    background-color: rgb(71, 77, 74);
+    color: #ffffff;
+}
+
+button.buttonSelected.days {border: none;}
+
+ng-md-icon.inactive {fill: #ffffff;}
+
+ng-md-icon.active {fill: #192733;}
+
+button.parent-button {
+    font-weight: 500;
+    width: 175px;
+    height: auto;
+}
+
+button.child-button {
+    font-weight: normal;
+    width: 120px;
+    height: auto;
+    line-height: 110%;
+    padding: 3px;
+}
+
+/* list and list component styling */
+div.main-list {
+    clear: both;
+}
+
+ul.main-list {
+/*    display: inline-block;*/
+/*    width: 90%;*/
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+}
+
+ul.main-list li {
+    display: inline-table;
+    width: 305px;
+    margin: 1%;
+    position: relative;
+    top: -50px;
+}
+
+md-card {background-color: rgb(255, 255, 255);}
+
+.item-name {
+    text-align: center;
+    color: rgb(255, 252, 252);
+    background-color: rgb(33, 150, 243);
+
+}
+
+.item-special {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    color: rgb(71, 77, 74);
+}
+
+/* dialog styling*/
+md-dialog {
+    background-color: rgb(242, 242, 242); 
+    max-height: 90%;
+    z-index: 999;
+}
+
+div.deal-dialog {padding-left: 20px;}
+
+.business-info-days {
+    display: inline-block !important;
+    text-align: center;
+    background-color: rgb(33, 150, 243);
+    border: solid 1px black;
+    margin-right: 5px;
+    color: white;
+    height: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    min-height: 30px;
+    min-width: 180px;
+}
+
+.business-info-content {
+    display: inline-table !important;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 4px;
+    margin-right: 3px;
+    text-align: center;
+    min-height: 175px;
+    min-width: 180px;
+    height: 175px;
+}
+
+md-dialog {margin: 0 auto;}
+
+map {
+    position: relative;
+    height: 300px; width: 500px; 
+    border: 1px solid black;
+    float: right;
+    margin-right:17px;
+}
+
+table.dialog-deals {margin-top: 20px;}
+
+div.close {
+    text-align: center;
+    margin-top: 13px;
+}
+
+button.dialog-close {
+    width: 300px;
+    position: relative;
+    color: rgb(255,255,255);
+}
+
+button.dialog-close:hover {color: #192733;}
+
+div.dialog-content {
+    width: 95%;
+    position: relative;
+    margin: 0 auto;
+}
+/*
+
+ui-gmap-google-map {
+    height: 400px;
+}
+
+
+md-card-content {
+    border-top: 1px solid lightgray;
+    color: black;
+}
+
+
+
+.deal-type-icon {
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 70%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 17px;
+    color: white;
+    font-weight: bold;
+}
+*/
+
+
+/*
+.card-button {
+    width: 50px;
+    float: right;
+    border-right: 1px solid lightgray;
+}
+
+.business-saved-button {
+    background-color: #259b24 !important;
+    border-top: none !important;
+    border-bottom: 1px solid #259b24;
+    border-right: none !important;
+}
+
+.business-add-button {
+    background-color: rgba(0, 0, 0, 0);
+    border-top: 1px solid lightgray;
+}
+
+.business-shared-button-active {
+    background-color: #3b5998 !important;
+    border-top: none !important;
+    border-bottom: 1px solid #3b5998;
+    border-right: none !important;
+}*/
+
+/*
+ng-md-icon [icon=favorite] {
+    fill: gray;
+}
+
+ng-md-icon [icon=favorite]:hover {
+    fill: red;
+}
+
+md-tooltip {
+    margin-top: 1%;
+}
+*/
+
+/*
+.list-business-image {
+    height: 190px;
+    width: 90%;
+}
+*/
+
+/*
+.business-card-img-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+*/
+

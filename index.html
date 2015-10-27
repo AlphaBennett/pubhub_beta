@@ -1,0 +1,101 @@
+<html ng-app="dsm.app">
+    <head>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <!-- jQuery UI -->
+        <script src="external/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+        <link rel="stylesheet" href="external/jquery-ui-1.11.4.custom/jquery-ui.css">
+        <!--AngularJS -->
+        <script src="external/angular.js"></script>
+        <!-- Angular Material Icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
+        <!-- Angular Material -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.8.3/angular-material.min.css">
+        <!-- Material Design Icons -->
+        <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.2.65/css/materialdesignicons.min.css">
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron|Michroma" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,400italic,500,500italic,700,700italic,900,900italic|Exo:400,300italic,100,100italic,200italic,200,300,400italic,500italic,500,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" type="text/css">
+        <!-- Animation CSS -->
+        <link rel="stylesheet" href="assets/css/animations.css">
+        
+        <!-- BootstrapJS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <!-- Angular Route -->
+        <script src="external/angular-route.js"></script>
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+        <!-- AngularAnimate -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.min.js"></script>
+        <!-- AngularAria -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-aria.min.js"></script>
+        <!-- Google Maps -->
+        <script src="external/lodash.js"></script>
+        <script src="external/angular-google-maps.js"></script>
+        <script src="external/ng-map.min.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <!-- allows for routing between /url and views -->
+        <script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+        <script src="external/ng-infinite-scroll.min.js"></script>
+        <!-- new slider -->
+        <script src="external/slider.js"></script>
+        
+        <!------------------------- application ------------------------>
+        
+        <!-- main app module -->
+        <script src="src/app.js"></script>
+        
+        <!-- Modules -->
+        <script src="src/modules/controllers.module.js"></script>
+        <script src="src/modules/directives.module.js"></script>
+        <script src="src/modules/services.module.js"></script>
+        <script src="src/modules/filters.module.js"></script>
+        
+        <!-- services -->
+        <script src="src/services/filter.service.js"></script>
+        <script src="src/services/firebase.service.js"></script>
+        <script src="src/services/utility.service.js"></script>       
+        <!-- directives -->
+        <script src="src/components/header/directives/header.directive.js"></script>
+        
+        <!--------------------- list ------------------------------>
+        
+        <!-- view controllers -->
+        <script src="src/components/list/controllers/list.controller.js"></script>
+        <script src="src/components/list/controllers/dialog.controller.js"></script>
+        <script src="src/components/list/controllers/listItem.controller.js"></script>
+         <!-- directives -->
+        <script src="src/components/list/directives/list.directive.js"></script>
+        <script src="src/components/list/directives/listItem.directive.js"></script>
+        <script src="src/components/list/directives/dialog.directive.js"></script>
+        
+        <!--------------------- filters ------------------------------>
+        <!-- view controllers -->
+        <script src="src/components/filter/controllers/filterItem.controller.js"></script>
+        <script src="src/components/filter/controllers/filterGroup.controller.js"></script>
+        <script src="src/components/filter/controllers/filterButton.controller.js"></script>
+        <script src="src/components/filter/controllers/filterSlider.controller.js"></script>
+        <script src="src/components/filter/controllers/subFilterGroup.controller.js"></script>
+        <script src="src/components/filter/controllers/mainFilter.controller.js"></script>
+        <!-- directives -->
+        <script src="src/components/filter/directives/mainFilter.directive.js"></script>
+        <script src="src/components/filter/directives/filterItem.directive.js"></script>
+        <script src="src/components/filter/directives/filterGroup.directive.js"></script>
+        <script src="src/components/filter/directives/filterButton.directive.js"></script>
+        <script src="src/components/filter/directives/filterSlider.directive.js"></script>
+        <script src="src/components/filter/directives/subFilterGroup.directive.js"></script>
+        <!-- filters -->
+        <script src="src/components/filter/filters/mainFilter.filter.js"></script>
+        
+    </head>
+
+    <body>
+        <header></header>
+        <div ng-view>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<div>
+    <button class="parent-button" ng-model="subFilterGroupCtrl.filterParams[key][header].active" ng-click="subFilterGroupCtrl.primaryButtonClick()" ng-class="{buttonSelected: subFilterGroupCtrl.filterParams[key][header].active, buttonNotSelected: !subFilterGroupCtrl.filterParams[key][header].active}">
+        {{header}}
+    </button>
+    <div ng-show="subFilterGroupCtrl.filterParams[key][header].active">
+        <div ng-repeat="filter in filters">
+            <button class="child-button" ng-click="subFilterGroupCtrl.subButtonClick(filter)" ng-class="{buttonSelected: subFilterGroupCtrl.filterParams[key][header][filter], buttonNotSelected: !subFilterGroupCtrl.filterParams[key][header][filter]}">
+                {{filter}}
+            </button>
+        </div>
+    </div>
+</div>

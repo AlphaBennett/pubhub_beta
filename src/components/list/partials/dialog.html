@@ -1,0 +1,99 @@
+<div class="dialog">
+    <md-dialog>
+        <md-content >
+            <div class="dialog-content">
+                <table  style="width: 100%;">
+                    <tr>
+                        <td style="display: inline; width: 60%;">
+                            <span>
+                                <table>
+                                    <tr>
+    <!--
+                                        <td>    
+                                            <img ng-src="{{ selectedItem.image }}" class="business-info-image" alt="selectedItem.simpleName"/>                                
+                                        </td>
+    -->
+                                        <td>
+                                            <h1> {{ selectedItem.name }} </h1>
+
+                                            <ul>
+                                                <li><h3>Address: </h3> {{ selectedItem.map.address }}</li>
+                                                <li><h3>Phone: </h3>(555) 555-5555 </li>
+                                                <li><h3>Days: </h3> Monday - Friday </li>
+                                                <li><h3>Hours: </h3>8:00 AM - 12:00 PM </li>                        
+                                                <li><h3>Website: </h3><a class="deal-link" href="http://{{ selectedItem.simpleName }}.com">http://{{ selectedItem.simpleName }}.com</a></li> 
+                                            </ul>
+    <!--
+                                        </td>                                    <td>
+                                            <h1 style="display: inline; margin-left: 2%; position: fixed; top: 60px;"> {{ selectedItem.name }} </h1>
+
+                                            <ul style="list-style-type: none; position: fixed; top: 25%; left: 275px; width: 100%">
+                                                <li><h3 style="display: inline; margin-left: 2%;">Address: </h3> {{ selectedItem.map.address }} </li>
+                                                <li><h3 style="display: inline; margin-left: 2%;">Phone: </h3>(555) 555-5555 </li>
+                                                <li><h3 style="display: inline; margin-left: 2%;">Days: </h3> Monday - Friday </li>
+                                                <li><h3 style="display: inline; margin-left: 2%;">Hours: </h3>8:00 AM - 12:00 PM </li>                        
+                                                <li><h3 style="display: inline; margin-left: 2%;">Website: </h3><a href="http://{{ selectedItem.simpleName }}.com">http://{{ selectedItem.simpleName }}.com</a></li> 
+                                            </ul>
+                                        </td>
+    -->
+    <!--
+                                            <span style="position: fixed; top: 43%; left: 345px;">
+                                                <span><ng-md-icon icon="favorite" style="fill: red" size="40">
+                                                    <md-tooltip>Favorite</md-tooltip>                                    
+                                                </ng-md-icon></span>
+                            <span><ng-md-icon icon="directions" style="fill: green" size="40">
+                                                    <md-tooltip>Directions</md-tooltip>                                    
+                                                </ng-md-icon></span>
+                            <span><ng-md-icon icon="local_taxi" style="fill: darkgoldenrod" size="40">
+                                                    <md-tooltip>Uber</md-tooltip>                                        
+                                                </ng-md-icon></span>
+                            <span><ng-md-icon icon="rate_review" style="fill: darkcyan" size="40">
+                                                    <md-tooltip>Write a Review</md-tooltip>                                        
+                                                </ng-md-icon></span>
+                            </span>
+    -->
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </span>
+                    </td>
+                    <td class="map" style="position: relative; right: 0px;">
+                        <map center="{{ selectedItem.map.address }}" zoom="{{ selectedItem.map.zoom }}" disable-default-u-i="true">
+                        </map>
+                    </td>
+                </tr>
+            </table>
+            <table class="dialog-deals">
+                <tr style="display: inline-table; width: 100%;">
+                    <td ng-repeat="day in dayBlocks">
+                        <md-whiteframe class="md-whiteframe-z1 business-info-days">
+                            <span> {{ day.name }} </span>
+                        </md-whiteframe>
+                    </td>
+                </tr>
+                <tr style="display: inline-table; width: 100%;">
+                    <td ng-repeat="day in dayBlocks">
+                        <md-whiteframe class="md-whiteframe-z1 business-info-content" layout-align="center center">
+                            <ul style="list-style-type: none; padding-left: 0%;">
+                                <li ng-repeat="specialItem in selectedItem.times[day.name]" ng-if="(selectedItem.times[day.name] != null)">
+                                    {{ listItemCtrl.convertTime(specialItem.start) }} - {{ listItemCtrl.convertTime(specialItem.end) }} <br/>
+                                    {{ specialItem.special }}
+                                </li>
+                                <li ng-if="(selectedItem.times[day.name] == null)">
+                                    <span><ng-md-icon icon="do_not_disturb" style="fill: darkgray; margin-top: 5%;" size="108"/></span>
+                                    <span><h5>No Deals Today!</h5></span>
+                                </li>
+
+                            </ul>
+                        </md-whiteframe>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="close">
+            <button md-no-ink class="dialog-close buttonSelected" ng-click="closeBusinessDetailsPopup()">Close</button>
+        </div>   
+        </md-content>
+    </md-dialog>
+</div>

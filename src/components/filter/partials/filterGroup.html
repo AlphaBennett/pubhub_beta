@@ -1,0 +1,13 @@
+<div class="filter-group-item" ng-repeat="(headerKey, filter) in filters.values">
+    <div ng-if="filters.displayType === 'checkbox'">
+        <filter-item key="key" filter="filter"></filter-item>
+    </div>
+    <div class="sub-filter-group" ng-if="filters.displayType === 'subCheckbox'">
+        <sub-filter-group key="key" filters="filter" header="headerKey"></sub-filter-group>
+    </div>
+    <div ng-class="{{key}}" ng-if="filters.displayType === 'button'">
+        <filter-button key="key" filter="filter" length="filters.length"></filter-button>
+
+    </div>
+</div>
+<filter-slider ng-if="filters.displayType ==='slider'" key="key" filters="filters.values"></filter-slider>

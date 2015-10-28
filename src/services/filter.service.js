@@ -5,8 +5,8 @@
     angular.module('dsm.services')
         .factory('FilterService', FilterService);
 
-FilterService.$inject = ['UtilityService'];
-    
+    FilterService.$inject = ['UtilityService'];
+
     function FilterService(UtilityService) {
         var vm = this;
 
@@ -74,7 +74,7 @@ FilterService.$inject = ['UtilityService'];
 
         function getTimes() {
             var timesObject = {};
-            for (var i = 1; i < 25; i++) {
+            for (var i = 0; i < 24; i++) {
                 timesObject[i] = UtilityService.convertTime(i);
             }
             return timesObject;

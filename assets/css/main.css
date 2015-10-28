@@ -1,10 +1,21 @@
-h1,h2,h3,h4,p,li,ul,span,body,button,div {
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+ul,
+span,
+body,
+button,
+div {
     font-weight: bold;
     margin: 0;
 }
-/* look into lightgreen color possibly? */
+/* original blue rgb(33, 150, 243); */
+
 html {
-    background: #ededed;
+    background: rgb(255, 255, 255);
     min-height: 100%;
     overflow-y: scroll;
     -webkit-touch-callout: none;
@@ -16,34 +27,42 @@ html {
 }
 
 a {
-    color: rgb(0, 0, 0); 
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
-a:visited{color: rgb(0, 0, 0);}
+a:visited {
+    color: rgb(0, 0, 0);
+}
 
-a.deal-link:hover {color: rgb(0, 95, 206);}
-
+a.deal-link:hover {
+    color: rgb(0, 95, 206);
+}
 /* general body and head styles */
+
 body {
-    background: #ffffff;
+    background: rgb(255, 255, 255);
     font-family: 'exo', sans-serif;
     font-kerning: auto;
     font-size: 1.3em;
 }
 
 header {
-    padding: 0 10px;
+    padding: 10px 10px;
     background: rgb(255, 255, 255);
-    border-bottom: solid 3px rgb(71, 77, 74);
-    color: rgb(33, 150, 243);
+    border-bottom: solid 3px rgb(123, 123, 123);
+    color: rgb(107, 182, 204);
     height: 150px;
     font-size: 2.5em;
     font-family: 'Orbitron'
 }
 
+.header-right-word {
+    color: #ff9d00;
+}
+
 .header-bar {
-    color: rgb(71, 77, 74);
+    color: rgb(123, 123, 123);
     margin-left: 5px;
 }
 
@@ -53,14 +72,17 @@ header {
     top: 0;
     font-size: .6em;
     color: white;
-    
 }
 
-ul {list-style: none;}
+ul {
+    list-style: none;
+}
 
-ul > li > h3 {display: inline;}
-
+ul > li > h3 {
+    display: inline;
+}
 /* filter component positioning */
+
 div.filters {
     height: 300px;
     text-align: center;
@@ -104,32 +126,32 @@ div.filter-group.zlocations {
     margin: 1px;
     vertical-align: top;
 }
-/* slider styling*/ 
-div[ui-slider]{
-    background: rgb(71, 77, 74);
+/* slider styling*/
+
+div[ui-slider] {
+    background: rgb(123, 123, 123);
     border: 0;
 }
 
-
 span.ui-slider-handle {
-    background: rgb(33, 150, 243);
+    background: rgb(107, 182, 204);
     width: 50px !important;
     height: 50px !important;
     border-radius: 50%;
     top: -17px !important;
     text-align: center;
     vertical-align: middle;
-    display:table-cell;
+    display: table-cell;
     font-size: .70em;
     padding-top: 16px;
     padding-right: 1px;
 }
 
 div.ui-slider-range {
-    background: rgb(33, 150, 243);
+    background: rgb(107, 182, 204);
 }
-
 /* filter button styling */
+
 button {
     width: auto;
     height: 50px;
@@ -143,25 +165,35 @@ button.days {
     border-radius: 50%;
 }
 
-button.types {width: 50px;}
+button.types {
+    width: 50px;
+}
 
-button.prices {width: 60px;}
+button.prices {
+    width: 60px;
+}
 
 button.buttonSelected {
-    background-color: rgb(33, 150, 243);
+    background-color: rgb(107, 182, 204);
     color: #192733;
 }
 
 button.buttonNotSelected {
-    background-color: rgb(71, 77, 74);
+    background-color: rgb(123, 123, 123);
     color: #ffffff;
 }
 
-button.buttonSelected.days {border: none;}
+button.buttonSelected.days {
+    border: none;
+}
 
-ng-md-icon.inactive {fill: #ffffff;}
+ng-md-icon.inactive {
+    fill: #ffffff;
+}
 
-ng-md-icon.active {fill: #192733;}
+ng-md-icon.active {
+    fill: #192733;
+}
 
 button.parent-button {
     font-weight: 500;
@@ -176,18 +208,47 @@ button.child-button {
     line-height: 110%;
     padding: 3px;
 }
-
 /* list and list component styling */
-div.main-list {
-    clear: both;
-}
 
 ul.main-list {
-/*    display: inline-block;*/
-/*    width: 90%;*/
+    /*    display: inline-block;*/
+    
+    clear: both;
+    width: 90%;
     margin: 0 auto;
     position: relative;
     padding: 0;
+}
+
+@media (max-width: 1910px) {
+    ul.main-list {
+        max-width: 1327px;
+    }
+}
+
+@media (max-width: 1495px) {
+    ul.main-list {
+        max-width: 996px;
+    }
+    div > h1 {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 1105px) {
+    ul.main-list {
+        max-width: 664px;
+    }
+}
+
+@media (max-width: 727px) {
+    ul.main-list {
+        max-width: 332px;
+    }
+    div.filter-group.times {
+        width: 75%;
+    }
 }
 
 ul.main-list li {
@@ -198,13 +259,14 @@ ul.main-list li {
     top: -50px;
 }
 
-md-card {background-color: rgb(255, 255, 255);}
+md-card {
+    background-color: rgb(255, 255, 255);
+}
 
 .item-name {
     text-align: center;
-    color: rgb(255, 252, 252);
-    background-color: rgb(33, 150, 243);
-
+    color: rgb(255, 255, 255);
+    background-color: rgb(107, 182, 204);
 }
 
 .item-special {
@@ -213,20 +275,22 @@ md-card {background-color: rgb(255, 255, 255);}
     padding: 0;
     color: rgb(71, 77, 74);
 }
-
 /* dialog styling*/
+
 md-dialog {
-    background-color: rgb(242, 242, 242); 
+    background-color: rgb(242, 242, 242);
     max-height: 90%;
     z-index: 999;
 }
 
-div.deal-dialog {padding-left: 20px;}
+div.deal-dialog {
+    padding-left: 20px;
+}
 
 .business-info-days {
     display: inline-block !important;
     text-align: center;
-    background-color: rgb(33, 150, 243);
+    background-color: rgb(107, 182, 204);
     border: solid 1px black;
     margin-right: 5px;
     color: white;
@@ -250,17 +314,22 @@ div.deal-dialog {padding-left: 20px;}
     height: 175px;
 }
 
-md-dialog {margin: 0 auto;}
+md-dialog {
+    margin: 0 auto;
+}
 
 map {
     position: relative;
-    height: 300px; width: 500px; 
+    height: 300px;
+    width: 500px;
     border: 1px solid black;
     float: right;
-    margin-right:17px;
+    margin-right: 17px;
 }
 
-table.dialog-deals {margin-top: 20px;}
+table.dialog-deals {
+    margin-top: 20px;
+}
 
 div.close {
     text-align: center;
@@ -270,10 +339,12 @@ div.close {
 button.dialog-close {
     width: 300px;
     position: relative;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
 }
 
-button.dialog-close:hover {color: #192733;}
+button.dialog-close:hover {
+    color: #192733;
+}
 
 div.dialog-content {
     width: 95%;
@@ -305,8 +376,6 @@ md-card-content {
     font-weight: bold;
 }
 */
-
-
 /*
 .card-button {
     width: 50px;
@@ -332,7 +401,6 @@ md-card-content {
     border-bottom: 1px solid #3b5998;
     border-right: none !important;
 }*/
-
 /*
 ng-md-icon [icon=favorite] {
     fill: gray;
@@ -346,14 +414,12 @@ md-tooltip {
     margin-top: 1%;
 }
 */
-
 /*
 .list-business-image {
     height: 190px;
     width: 90%;
 }
 */
-
 /*
 .business-card-img-container {
     width: 100%;
@@ -361,4 +427,3 @@ md-tooltip {
     position: relative;
 }
 */
-

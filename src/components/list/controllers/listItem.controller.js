@@ -9,32 +9,31 @@
     function ListItemController($mdDialog, $scope, UtilityService) {
         var vm = this;
         var date = new Date();
-        switch(6){
-                case 0:
-                    vm.today = 'Sunday';
-                    break;
-                case 1:
-                    vm.today = 'Monday';
-                    break;
-                case 2:
-                    vm.today = 'Tuesday';
-                    break;
-                case 3:
-                    vm.today = 'Wednesday';
-                    break;
-                case 4:
-                    vm.today = 'Thursday';
-                    break;
-                case 5:
-                    vm.today = 'Friday';
-                    break;
-                case 6:
-                    vm.today = 'Saturday';
-                    break;
-                default:
-                    break;
+        switch (6) {
+        case 0:
+            vm.today = 'Sunday';
+            break;
+        case 1:
+            vm.today = 'Monday';
+            break;
+        case 2:
+            vm.today = 'Tuesday';
+            break;
+        case 3:
+            vm.today = 'Wednesday';
+            break;
+        case 4:
+            vm.today = 'Thursday';
+            break;
+        case 5:
+            vm.today = 'Friday';
+            break;
+        case 6:
+            vm.today = 'Saturday';
+            break;
+        default:
+            break;
         }
-        
         vm.showDialog = function (ev, item) {
             $scope.selectedItem = item;
 

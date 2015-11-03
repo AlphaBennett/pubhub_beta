@@ -12,6 +12,8 @@ div {
     font-weight: bold;
     margin: 0;
 }
+
+
 /* original blue rgb(33, 150, 243); */
 
 html {
@@ -38,6 +40,8 @@ a:visited {
 a.deal-link:hover {
     color: rgb(0, 95, 206);
 }
+
+
 /* general body and head styles */
 
 body {
@@ -48,6 +52,7 @@ body {
 }
 
 header {
+    text-align: center;
     padding: 10px 10px;
     background: rgb(255, 255, 255);
     border-bottom: solid 3px rgb(123, 123, 123);
@@ -55,6 +60,13 @@ header {
     height: 150px;
     font-size: 2.5em;
     font-family: 'Orbitron'
+}
+
+.logo {
+    font-size: 2.1em;
+    position: absolute;
+    left: 10px;
+    top: -2px;
 }
 
 .header-right-word {
@@ -81,44 +93,42 @@ ul {
 ul > li > h3 {
     display: inline;
 }
+
+
 /* filter component positioning */
 
-div.filters {
-    height: 300px;
-    text-align: center;
+div.filters.header {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
 }
 
-div.filter-group {
+div.filters {
     position: relative;
     text-align: center;
 }
 
+div.filters.body {
+    height: 300px;
+}
+
+div.filters.body > div {
+    display: inline-block;
+}
+
+div.filter-group.header {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
 div.filter-group.days {
-    top: -125px;
+    margin: 5px auto;
 }
 
 div.filter-group.times {
-    margin: 0 auto;
-    width: 500px;
-    top: -156px;
-}
-
-div.filter-group.types {
-    display: inline-block;
-    top: -126px;
-    left: -89px;
-}
-
-div.filter-group.prices {
-    display: inline-block;
-    top: -52px;
-    left: 501px;
-}
-
-div.filter-group.zlocations {
-    display: inline-block;
-    top: -126px;
-    left: -83px;
+    margin: 25px auto;
+    width: 450px;
 }
 
 .filter-group-item {
@@ -126,7 +136,14 @@ div.filter-group.zlocations {
     margin: 1px;
     vertical-align: top;
 }
+
+
 /* slider styling*/
+
+.ui-slider {
+    /*    font-family: 'exo', sans-serif;*/
+    font-size: .4em;
+}
 
 div[ui-slider] {
     background: rgb(123, 123, 123);
@@ -150,6 +167,8 @@ span.ui-slider-handle {
 div.ui-slider-range {
     background: rgb(107, 182, 204);
 }
+
+
 /* filter button styling */
 
 button {
@@ -161,11 +180,12 @@ button {
 }
 
 button.days {
+    font-size: 22px;
     width: 50px;
     border-radius: 50%;
 }
 
-button.types {
+button.atypes {
     width: 50px;
 }
 
@@ -208,11 +228,11 @@ button.child-button {
     line-height: 110%;
     padding: 3px;
 }
+
+
 /* list and list component styling */
 
 ul.main-list {
-    /*    display: inline-block;*/
-    
     clear: both;
     width: 90%;
     margin: 0 auto;
@@ -226,13 +246,51 @@ ul.main-list {
     }
 }
 
+@media (max-width: 1600px) {
+    .logo {
+        font-size: .9em;
+        position: absolute;
+        left: 15px;
+        top: 30px;
+    }
+    /*
+    .logo {
+    display: none;
+    visibility: hidden;
+}
+*/
+}
+
 @media (max-width: 1495px) {
     ul.main-list {
         max-width: 996px;
     }
-    div > h1 {
-        display: none;
-        visibility: hidden;
+}
+
+@media (max-width: 1420px) {
+    .logo {
+        font-size: .7em;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+    }
+}
+
+@media (max-width: 1180px) {
+    div.filter-group.atypes {
+        margin: 0 10px;
+    }
+    div.filter-group.prices {
+        margin: 0 10px;
+    }
+    div.filter-group.locations {
+        position: absolute;
+        display: block;
+        top: 50px;
+    }
+    div.filter-group.prices {
+        /*        position: absolute;*/
+        top: -20px;
     }
 }
 
@@ -247,7 +305,7 @@ ul.main-list {
         max-width: 332px;
     }
     div.filter-group.times {
-        width: 75%;
+        /*        width: 75%;*/
     }
 }
 
@@ -275,6 +333,8 @@ md-card {
     padding: 0;
     color: rgb(71, 77, 74);
 }
+
+
 /* dialog styling*/
 
 md-dialog {
@@ -351,6 +411,8 @@ div.dialog-content {
     position: relative;
     margin: 0 auto;
 }
+
+
 /*
 
 ui-gmap-google-map {
@@ -376,6 +438,8 @@ md-card-content {
     font-weight: bold;
 }
 */
+
+
 /*
 .card-button {
     width: 50px;
@@ -401,6 +465,8 @@ md-card-content {
     border-bottom: 1px solid #3b5998;
     border-right: none !important;
 }*/
+
+
 /*
 ng-md-icon [icon=favorite] {
     fill: gray;
@@ -414,12 +480,16 @@ md-tooltip {
     margin-top: 1%;
 }
 */
+
+
 /*
 .list-business-image {
     height: 190px;
     width: 90%;
 }
 */
+
+
 /*
 .business-card-img-container {
     width: 100%;

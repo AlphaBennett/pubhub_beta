@@ -11,52 +11,53 @@
         var vm = this;
 
         vm.filters = {
-            types: {
-                displayType: 'button',
-                values: [
-                    {
-                        type: 'Food',
-                        icon: 'local_restaurant'
+            header: {
+                days: {
+                    displayType: 'button',
+                    values: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                    length: 1
+                },
+                times: {
+                    displayType: 'slider',
+                    values: getTimes()
+                }
+            },
+            body: {
+                atypes: {
+                    displayType: 'button',
+                    values: [
+                        {
+                            type: 'Food',
+                            icon: 'local_restaurant'
                     },
-                    {
-                        type: 'Drink',
-                        icon: 'local_bar'
+                        {
+                            type: 'Drink',
+                            icon: 'local_bar'
                     },
-                    {
-                        type: 'Entertainment',
-                        icon: 'local_play'
+                        {
+                            type: 'Entertainment',
+                            icon: 'local_play'
                     }
                 ],
-            },
-            prices: {
-                displayType: 'button',
-                values: ['$', '$$', '$$$', '$$$$'],
-            },
-            days: {
-                displayType: 'button',
-                values: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                length: 1
-            },
-            times: {
-                displayType: 'slider',
-                values: getTimes()
-            },
-            zlocations: {
-                displayType: 'subCheckbox',
-                values: {
-                    'Des Moines': ['East Village', 'Downtown', 'Western Gateway', 'Ingersoll', 'Drake', 'Beaverdale'],
-                    'West Des Moines': ['West Glen', 'Jordan Creek'],
-                    'Altoona': ['West Side'],
-                    'Ankeny': ['Raccoon River', 'Valley West']
+                },
+                prices: {
+                    displayType: 'button',
+                    values: ['$', '$$', '$$$', '$$$$'],
+                },
+                locations: {
+                    displayType: 'subCheckbox',
+                    values: {
+                        'Des Moines': ['East Village', 'Downtown', 'Western Gateway', 'Ingersoll', 'Drake', 'Beaverdale'],
+                        'West Des Moines': ['West Glen', 'Jordan Creek'],
+                        'Altoona': ['West Side'],
+                        'Ankeny': ['Raccoon River', 'Valley West']
+                    }
                 }
             }
         };
 
         vm.filterParams = getFilterParams();
 
-        //this will be a service call later based on what city you're in we will provide all the filters needed
-        //this will allow us to dynamically populate a list of filter checkboxes, radios, whatever
-        //using ng-repeat
         var service = {
             filterParams: vm.filterParams,
             filters: vm.filters
@@ -66,10 +67,14 @@
 
         function getFilterParams() {
             var params = {};
-            for (var filter in vm.filters) {
-                params[filter] = [];
+            for (var component in vm.filters) {
+                for (var filter in vm.filters[component]) {
+                    params[filter] = [];
+
+                }
             }
             return params;
+
         }
 
         function getTimes() {

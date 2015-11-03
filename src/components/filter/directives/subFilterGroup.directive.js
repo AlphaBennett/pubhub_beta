@@ -10,7 +10,8 @@
             scope: {
                 key: '=',
                 filters: '=',
-                header: '='
+                header: '=',
+                component: '='
             },
             controller: 'SubFilterGroupController',
             controllerAs: 'subFilterGroupCtrl',

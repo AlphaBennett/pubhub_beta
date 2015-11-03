@@ -7,17 +7,10 @@
     angular.module('dsm.controllers')
         .controller('FilterController', FilterController);
 
-    FilterController.$inject = ['FilterService'];
+    FilterController.$inject = ['FilterService', '$scope'];
 
-    function FilterController(FilterService) {
-        //avoid $scope or scope, use vm as the default name that contains 'this'
-        //this isolates this controllers scope and keeps everything neat
-        //to reference this properties, e.g. vm.filters or vm.updateFilters()
-        //they can be referred to in the html as mainFilter.filters , mainFilter.updateFilters()
-        //since mainFilter is the alias I gave it in the directive w/ 'controllerAs'
+    function FilterController(FilterService, $scope) {
         var vm = this;
-
-        //this could be updated dynamically based on what categories we want to filter by
-        vm.filters = FilterService.filters;
+        vm.filters = FilterService.filters[$scope.component];
     }
 })();

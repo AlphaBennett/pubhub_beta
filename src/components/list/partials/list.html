@@ -1,6 +1,6 @@
 <div class="main-list">
     <ul class="main-list">
-        <li ng-repeat="item in listCtrl.results | MainFilter: listCtrl.filterParams.types : listCtrl.filterParams.prices : listCtrl.filterParams.zlocations : listCtrl.filterParams.days : listCtrl.filterParams.times">
+        <li ng-repeat="item in listCtrl.results | MainFilter: listCtrl.filterParams">
             <list-item></list-item>
         </li>
     </ul>

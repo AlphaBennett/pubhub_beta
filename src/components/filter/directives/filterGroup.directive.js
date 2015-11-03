@@ -11,6 +11,7 @@
             scope: {
                 key: '=',
                 filters: '=',
+                component: '='
             },
             controller: 'FilterGroupController',
             controllerAs: 'filterGroupCtrl',

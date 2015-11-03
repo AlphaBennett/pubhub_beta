@@ -7,10 +7,13 @@
 
     function mainFilter() {
         return {
-            restrict: 'E', 
+            restrict: 'E',
             controller: 'FilterController',
             controllerAs: 'filterCtrl',
-            templateUrl: 'src/components/filter/partials/mainFilter.html'
+            templateUrl: 'src/components/filter/partials/mainFilter.html',
+            scope: {
+                component: '='
+            }
         };
     }
 

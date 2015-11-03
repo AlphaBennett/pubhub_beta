@@ -7,8 +7,13 @@
 
 
     function filter() {
-        return function (items, types, prices, locations, days, times) {
-            //this thing does shit for biscuits atm
+        return function (items, filterParams) {
+            var types = filterParams.atypes;
+            var prices = filterParams.prices;
+            var locations = filterParams.locations;
+            var days = filterParams.days;
+            var times = filterParams.times;
+
             var displayItem;
             var visible = [];
             angular.forEach(items, function (item) {
@@ -76,8 +81,6 @@
                                     var minFilter = times[0];
                                     var maxFilter = times[1];
                                     if ((minTime >= minFilter && minTime <= maxFilter) || (maxTime >= minFilter && maxTime <= maxFilter) || (minFilter >= minTime && minFilter <= maxTime) || (maxFilter >= minTime && maxFilter <= maxTime)) {
-                                        //TODO: add time min/max to filter controller
-                                        //add filtering handling here
                                         displayItem = true;
                                         timeFound = true;
                                         break;

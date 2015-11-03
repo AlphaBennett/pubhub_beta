@@ -1,5 +1,5 @@
-<div class="filters">
+<div class="filters {{component}}">
     <div class="filter-group {{key}}" ng-repeat="(key, filters) in filterCtrl.filters">
-        <filter-group class="{{key}}" key="key" filters="filters"></filter-group>
+        <filter-group class="{{key}}" key="key" filters="filters" component="component"></filter-group>
     </div>
 </div>

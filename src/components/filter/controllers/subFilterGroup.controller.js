@@ -16,7 +16,7 @@
 
         vm.primaryButtonClick = function () {
             if (vm.filterParams[$scope.key][$scope.header].active) {
-                angular.forEach(vm.filters[$scope.key].values[$scope.header], function (subFilter, key) {
+                angular.forEach(vm.filters[$scope.component][$scope.key].values[$scope.header], function (subFilter, key) {
                     vm.filterParams[$scope.key][$scope.header][subFilter] = false;
                 });
             }
